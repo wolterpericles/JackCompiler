@@ -73,8 +73,6 @@ public class JackTokenizer {
         {
             listaTokens.add(m.group());
         }
-        //System.out.println(listaTokens);
-        //System.out.println(combinarRegex);
     }
     
     public boolean hasMoreTokens()
