@@ -78,14 +78,7 @@ public class JackTokenizer {
     
     public boolean hasMoreTokens()
     {
-        if(indiceTokenCorrente == listaTokens.size()-1)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return indiceTokenCorrente != listaTokens.size()-1;
     }
     
     public void advance()
@@ -100,7 +93,6 @@ public class JackTokenizer {
             {
                 indiceTokenCorrente++;
             }
-        } else {
         }
     }
     
@@ -231,16 +223,16 @@ public class JackTokenizer {
         }
         if(this.tokenType() == Token.SYMBOL)
         {
-            if(tokenCorrente == "<")
+            if("<".equals(tokenCorrente))
             {
                 tokenTag = "<symbol>&lt</symbol>";
-            } else if(tokenCorrente == ">")
+            } else if(">".equals(tokenCorrente))
             {
                 tokenTag = "<symbol>&gt</symbol>";
-            } else if(tokenCorrente == "\"")
+            } else if("\"".equals(tokenCorrente))
             {
                 tokenTag = "<symbol>&quot</symbol>";
-            } else if(tokenCorrente == "&")
+            } else if("&".equals(tokenCorrente))
             {
                 tokenTag = "<symbol>&amp</symbol>";
             } else {
