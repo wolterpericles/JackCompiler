@@ -85,14 +85,7 @@ public class JackTokenizer {
     {
         if(hasMoreTokens())
         {
-            if(indiceTokenCorrente == -1)
-            {
-                indiceTokenCorrente = 0;
-            }
-            else
-            {
-                indiceTokenCorrente++;
-            }
+            indiceTokenCorrente++;
         }
     }
     
