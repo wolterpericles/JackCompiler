@@ -13,9 +13,11 @@ import java.io.IOException;
  */
 public class CompilationEngine {
     
+    private final JackTokenizer tokenizer;
+    
     public CompilationEngine(String entrada) throws IOException
     {
-        JackTokenizer tokenizer = new JackTokenizer(entrada);
+        tokenizer = new JackTokenizer(entrada);
         tokenizer.advance();
     }
     
