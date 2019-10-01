@@ -19,8 +19,9 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
+        /*
         JackTokenizer jack;
-        jack = new JackTokenizer("./Exemplos_Jack/Main.jack");
+        jack = new JackTokenizer("./Exemplos_Jack/Square.jack");
         System.out.println("<tokens>");
         while(jack.hasMoreTokens())
         {
@@ -28,6 +29,7 @@ public class Main {
             System.out.println(jack.tagToken());
         }
         System.out.println("</tokens>");
+        */
     }
     
 }
