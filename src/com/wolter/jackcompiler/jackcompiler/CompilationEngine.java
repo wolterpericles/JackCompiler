@@ -21,4 +21,8 @@ public class CompilationEngine {
         tokenizer.advance();
     }
     
+    public void CompileClass()
+    {
+        
+    }
 }
