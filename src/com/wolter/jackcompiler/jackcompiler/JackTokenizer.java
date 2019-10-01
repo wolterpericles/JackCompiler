@@ -64,8 +64,10 @@ public class JackTokenizer {
             linhaCodigo = br.readLine();
             codigo += linhaCodigo+"\n";
         }
-        // Remove comentarios do codigo
+        // Remove comentarios em uma linha
         codigo = codigo.replaceAll("(?m)\\s*//.+$", "");
+        // Remove comentarios em bloco
+        codigo = codigo.replaceAll("(/\\*\\*)(?s).*(\\*/)", "");
         // Remove linhas em branco
         codigo = codigo.replaceAll("(?m)^[ \\t]*\\r?\\n", "");
         
