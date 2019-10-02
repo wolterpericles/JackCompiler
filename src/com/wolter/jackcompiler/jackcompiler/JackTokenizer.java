@@ -167,6 +167,11 @@ public class JackTokenizer {
         return tipoKeyword;
     }
     
+    public String getToken()
+    {
+        return listaTokens.get(indiceTokenCorrente);
+    }
+    
     public char symbol()
     {
         char tokenSymbol;

@@ -30,6 +30,9 @@ public class Main {
         }
         System.out.println("</tokens>");
         */
+        
+        CompilationEngine comp = new CompilationEngine("./Exemplos_Jack/Square.jack");
+        System.out.println(comp.compileClass());
     }
     
 }
