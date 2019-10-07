@@ -355,7 +355,7 @@ public class CompilationEngine {
             xmlToken(tokenizer.getToken());
         } else
         {
-            System.out.println("Erro => operador incorreto");
+            System.out.println("Erro -> operador incorreto");
             System.exit(0);
         }
     }
@@ -374,7 +374,7 @@ public class CompilationEngine {
         
     }
     
-    // integerConstant | varName
+    // integerConstant | stringConstant | keywordConstant | varName
     public void compileTerm()
     {
         iniciarTagNaoTerminal("term");
@@ -382,25 +382,9 @@ public class CompilationEngine {
            tokenizer.tokenType().equals(Token.STRINGCONST) ||
            tokenizer.tokenType().equals(Token.KEYWORD)){
             xmlToken(tokenizer.getToken());
-        } else if(tokenizer.getToken().equals("("))
-        {
-            xmlToken("(");
-            compileExpression();
-            xmlToken(")");
-        } else if(tokenizer.getToken().equals("-") ||
-                  tokenizer.getToken().equals("~"))
-        {
-            unaryOp();
-            compileTerm();
         } else
         {
             varName();
-            if("[".equals(tokenizer.getToken()))
-            {
-                xmlToken("[");
-                compileExpression();
-                xmlToken("]");
-            }
         }
         fecharTagNaoTerminal("term");
     }
