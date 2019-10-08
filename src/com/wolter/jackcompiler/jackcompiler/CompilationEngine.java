@@ -84,7 +84,7 @@ public class CompilationEngine {
     /* Não Terminal */
     
     // 'class' className '{' classVarDec* subroutineDec* '}'
-    public void compileClass()
+    public String compileClass()
     {
         iniciarTagNaoTerminal("class");
         xmlToken("class");
@@ -94,6 +94,7 @@ public class CompilationEngine {
         compileSubroutine();
         xmlToken("}");
         fecharTagNaoTerminal("class");
+        return xml;
     }
     
     // identifier
@@ -421,9 +422,4 @@ public class CompilationEngine {
             xmlToken(")");
         }
     }  
-    
-    public void compilarXml()
-    {
-        System.out.println(xml);
-    }
 }

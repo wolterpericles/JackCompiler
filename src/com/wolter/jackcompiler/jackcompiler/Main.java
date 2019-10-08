@@ -27,7 +27,7 @@ public class Main {
                 break;
             case 1:
                 CompilationEngine comp = new CompilationEngine(args[0]);
-                comp.compilarXml();
+                System.out.println(comp.compileClass());
                 break;
             default:
                 System.out.println("Erro");
