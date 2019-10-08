@@ -19,20 +19,20 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        /*
-        JackTokenizer jack;
-        jack = new JackTokenizer("./Exemplos_Jack/Square.jack");
-        System.out.println("<tokens>");
-        while(jack.hasMoreTokens())
-        {
-            jack.advance();
-            System.out.println(jack.tagToken());
-        }
-        System.out.println("</tokens>");
         
-        */
-        CompilationEngine comp = new CompilationEngine("./Exemplos_Jack/Square.jack");
-        System.out.println(comp.compileClass());
+        switch(args.length)
+        {
+            case 0:
+                System.out.println("Compilando");
+                break;
+            case 1:
+                CompilationEngine comp = new CompilationEngine(args[1]);
+                System.out.println(comp.compileClass());
+                break;
+            default:
+                System.out.println("Erro");
+                break;
+        }
     }
     
 }
