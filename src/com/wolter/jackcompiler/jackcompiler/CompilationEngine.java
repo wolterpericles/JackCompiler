@@ -84,7 +84,7 @@ public class CompilationEngine {
     /* Não Terminal */
     
     // 'class' className '{' classVarDec* subroutineDec* '}'
-    public String compileClass()
+    public void compileClass()
     {
         iniciarTagNaoTerminal("class");
         xmlToken("class");
@@ -94,7 +94,6 @@ public class CompilationEngine {
         compileSubroutine();
         xmlToken("}");
         fecharTagNaoTerminal("class");
-        return xml;
     }
     
     // identifier
@@ -131,7 +130,7 @@ public class CompilationEngine {
             xmlToken(tokenizer.getToken());
         }
         else{
-            System.out.println("Erro -> tipo não definido");
+            System.out.println("Erro -> tipo não definido: " + tokenizer.getToken() );
             System.exit(0);
         }
     }
@@ -422,4 +421,9 @@ public class CompilationEngine {
             xmlToken(")");
         }
     }  
+    
+    public void compilarXml()
+    {
+        System.out.println(xml);
+    }
 }

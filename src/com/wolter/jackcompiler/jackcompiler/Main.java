@@ -26,8 +26,8 @@ public class Main {
                 System.out.println("Compilando");
                 break;
             case 1:
-                CompilationEngine comp = new CompilationEngine(args[1]);
-                System.out.println(comp.compileClass());
+                CompilationEngine comp = new CompilationEngine(args[0]);
+                comp.compilarXml();
                 break;
             default:
                 System.out.println("Erro");
