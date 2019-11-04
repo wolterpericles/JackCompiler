@@ -5,9 +5,16 @@ Compilador para a linguagem Jack feito em Java.
 
 ## Compilando arquivo .jack:
 
+# Markdown
+
+...
 $java -jar JackCompiler.jar codigo.jack
+...
 
 ## Compilando todos os arquivos da pasta:
 
-$java -jar JackCompiler.jar
+# Markdown
 
+...
+$java -jar JackCompiler.jar
+...
