@@ -24,7 +24,7 @@ public class CompilationEngine {
     private final ArrayList<String> listaTiposSubrotina = new ArrayList<>();
     private final String op[] = {"+","-","*","/","&","|","<",">","="};
     private final String opUn[] = {"-","~"};
-    private final String tipos[] = {"int","char","boolean","Square"};
+    private final String tipos[] = {"int","char","boolean","Square","String","Array","SquareGame","PongGame"};
     private final String tiposSubrotina[] = {"constructor","function","method"};
     
     private void tagTerminal(String terminal)
@@ -50,7 +50,7 @@ public class CompilationEngine {
             tokenizer.advance();
         }
         else{
-            System.out.println("Erro -> token incorreto: " + token);
+            System.out.println("Erro -> token incorreto: " + token + tokenizer.getToken());
             System.exit(0);
         }
     }
@@ -382,9 +382,27 @@ public class CompilationEngine {
            tokenizer.tokenType().equals(Token.STRINGCONST) ||
            tokenizer.tokenType().equals(Token.KEYWORD)){
             xmlToken(tokenizer.getToken());
+        } else if ("(".equals(tokenizer.getToken())){
+            xmlToken("(");
+            compileExpression();
+            xmlToken(")");
+        } else if ("[".equals(tokenizer.getToken())){
+            xmlToken("[");
+            compileExpression();
+            xmlToken("]");
+        } else if(tokenizer.getToken().equals("-") || tokenizer.getToken().equals("~"))
+        {
+            unaryOp();
+            compileTerm();
         } else
         {
             varName();
+            if(tokenizer.getToken().equals("["))
+            {
+                xmlToken("[");
+                compileExpression();
+                xmlToken("]");
+            }
         }
         fecharTagNaoTerminal("term");
     }
